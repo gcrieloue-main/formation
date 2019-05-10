@@ -6,27 +6,40 @@ import styles from './styles.scss';
 import { swAPI } from '../../../swapi';
 import { CharacterList } from '../../components/CharacterList';
 import { setRandomCurrentCharacter } from '../../../user/actions';
+import { Pagination } from '../../components/Pagination';
 
 export const PeopleComponent = ({ setRandomCharacter }) => {
   const [value, setValue] = useState('');
+  const [currentValue, setCurrentValue] = useState('');
+  const [page, setPage] = useState(1);
+  const [nbResults, setNbResults] = useState(0);
   const [characterList, setCharacterList] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  // init
-  useEffect(() => {
+  const search = (v, p) => {
     setIsLoading(true);
-    swAPI.getCharacterList(value).then(d => {
+    swAPI.getCharacterList(v, p).then(d => {
+      setNbResults(d.count);
       setCharacterList(d.results);
+      console.log(`results : ${d.count}, page: ${p}`);
       setIsLoading(false);
     });
+  };
+
+  // init
+  useEffect(() => {
+    search();
   }, []);
 
   const onSearch = () => {
-    setIsLoading(true);
-    swAPI.getCharacterList(value).then(d => {
-      setCharacterList(d.results);
-      setIsLoading(false);
-    });
+    setCurrentValue(value);
+    setPage(1);
+    search(currentValue);
+  };
+
+  const onChange = p => {
+    setPage(p);
+    search(currentValue, p);
   };
 
   return (
@@ -46,6 +59,9 @@ export const PeopleComponent = ({ setRandomCharacter }) => {
       </div>
       {isLoading && <Loader />}
       {!isLoading && <CharacterList characters={characterList} />}
+      <div>
+        <Pagination onChange={onChange} currentPage={page} numberOfResults={nbResults} />
+      </div>
       <div className={styles.randomUser}>
         <Button secondary onClick={setRandomCharacter}>
           ↻ Random character

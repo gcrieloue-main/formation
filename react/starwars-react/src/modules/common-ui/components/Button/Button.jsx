@@ -17,7 +17,7 @@ export const Button = ({ children, onClick, className, secondary }) => {
 
 Button.propTypes = {
   // children: PropTypes.oneOf([PropTypes.string, PropTypes.element]),
-  children: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   onClick: PropTypes.func,
   className: PropTypes.string,
   secondary: PropTypes.bool,
