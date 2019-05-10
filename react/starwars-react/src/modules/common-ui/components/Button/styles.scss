@@ -15,16 +15,16 @@
   }
 
   &:active {
-    background-color: black;
+    background-color: rgb(27, 27, 27);
     color: #ffe300;
   }
 
   &.secondary {
-    background-color: black;
+    background-color: rgb(27, 27, 27);
     color: #ffe300;
   }
   &.secondary:active {
     background-color: #ffe300;
-    color: black;
+    color: rgb(27, 27, 27);
   }
 }
