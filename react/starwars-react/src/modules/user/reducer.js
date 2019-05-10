@@ -1,6 +1,6 @@
 import { SET_CHARACTER, SET_CHARACTER_LOADING } from './actions';
 
-const initialState = {
+export const initialState = {
   character: null,
   characterLoading: false,
 };
