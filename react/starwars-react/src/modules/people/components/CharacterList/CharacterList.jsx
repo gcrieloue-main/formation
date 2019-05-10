@@ -12,12 +12,12 @@ export const CharacterList = ({ characters }) => {
       return (
         <NavLink to={url} key={c.url} className="link">
           <div className={styles.line}>
-            <div className={styles.pic}>
-              <img src={`https://robohash.org/test.png`} alt="robothash" width="50px" />
-            </div>
             <div className={styles.name}>{c.name}</div>
             <div className={styles.height}>{c.height}</div>
             <div className={styles.birth}>{c.birth_year}</div>
+            <div className={styles.pic}>
+              <img src={`https://robohash.org/${c.name}.png`} alt="robothash" width="50px" />
+            </div>
           </div>
         </NavLink>
       );

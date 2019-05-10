@@ -1,6 +1,7 @@
 .line {
   padding: 1rem 0 1rem 1rem;
   display: flex;
+  position: relative;
   justify-content: space-between;
   border-left: 5px solid #666;
   margin-bottom: 0.2rem;
@@ -29,6 +30,7 @@
 }
 
 .pic {
-  display: none;
-  padding: 0;
+  position: absolute;
+  right: 0;
+  top: -0.5rem;
 }
