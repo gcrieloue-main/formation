@@ -1,0 +1,7 @@
+container = "big" component  (component with a lot of sub-components)
+
+ {children} -> destructuring (props.children)
+
+ https://github.com/JedWatson/classnames
+
+ https://github.com/reduxjs/reselect
