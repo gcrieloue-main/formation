@@ -16,10 +16,11 @@ export const Button = ({ children, onClick, className, secondary }) => {
 };
 
 Button.propTypes = {
-  children: PropTypes.oneOf(PropTypes.string, PropTypes.element),
+  // children: PropTypes.oneOf([PropTypes.string, PropTypes.element]),
+  children: PropTypes.string,
   onClick: PropTypes.func,
   className: PropTypes.string,
-  secondary: PropTypes.string,
+  secondary: PropTypes.bool,
 };
 
 Button.defaultProps = {
