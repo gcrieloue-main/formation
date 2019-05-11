@@ -1,4 +1,4 @@
-import { SET_CHARACTER, SET_CHARACTER_LOADING } from './actions';
+import { SET_CHARACTER, SET_CHARACTER_LOADING, SET_FAVORITE_SHIPS } from './actions';
 
 export const initialState = {
   character: null,
@@ -12,6 +12,9 @@ export const userReducer = (state = initialState, action) => {
     }
     case SET_CHARACTER_LOADING: {
       return { ...state, characterLoading: !!action.loading };
+    }
+    case SET_FAVORITE_SHIPS: {
+      return { ...state, favoriteShips: [...state.favoriteShips, action.ship] };
     }
     default:
       return state;
