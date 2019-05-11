@@ -34,8 +34,7 @@ export const PeopleComponent = ({ setRandomCharacter }) => {
   const onSearch = () => {
     setCurrentValue(value);
     setPage(1);
-    console.log(`onSearch ${value}/${currentValue}`);
-    search(currentValue);
+    search(value, 1);
   };
 
   const onChange = p => {
@@ -50,9 +49,11 @@ export const PeopleComponent = ({ setRandomCharacter }) => {
           <TextInput
             placeHolder="Character name ..."
             label="Character search :"
-            onChange={e => setValue(e.target.value)}
-            onEnter={e => {
+            onChange={e => {
+              console.log('onChange');
               setValue(e.target.value);
+            }}
+            onEnter={e => {
               console.log(`onEnter ${e.target.value}/${value}`);
               onSearch();
             }}
