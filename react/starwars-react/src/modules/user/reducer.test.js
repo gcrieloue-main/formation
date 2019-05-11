@@ -1,5 +1,5 @@
 import { userReducer, initialState } from './reducer';
-import { setCharacterLoading } from './actions';
+import { setCharacterLoading, addFavoriteShip } from './actions';
 
 describe('User reducer', () => {
   it('sets character correctly', () => {
@@ -11,5 +11,11 @@ describe('User reducer', () => {
   it('sets character loading correctly', () => {
     const state = userReducer(initialState, setCharacterLoading(true));
     expect(state.characterLoading).toBe(true);
+  });
+
+  it('adds a new favorite ship correctly', () => {
+    const ship = { shipname: 'test' };
+    const state = userReducer(initialState, addFavoriteShip(ship));
+    expect(state.favoriteShips).toStrictEqual([ship]);
   });
 });

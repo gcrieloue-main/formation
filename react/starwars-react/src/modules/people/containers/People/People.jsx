@@ -17,11 +17,11 @@ export const PeopleComponent = ({ setRandomCharacter }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const search = (v, p) => {
+    console.log(`search ${v} with page ${p}`);
     setIsLoading(true);
     swAPI.getCharacterList(v, p).then(d => {
       setNbResults(d.count);
       setCharacterList(d.results);
-      console.log(`results : ${d.count}, page: ${p}`);
       setIsLoading(false);
     });
   };
@@ -34,6 +34,7 @@ export const PeopleComponent = ({ setRandomCharacter }) => {
   const onSearch = () => {
     setCurrentValue(value);
     setPage(1);
+    console.log(`onSearch ${value}/${currentValue}`);
     search(currentValue);
   };
 
@@ -50,6 +51,11 @@ export const PeopleComponent = ({ setRandomCharacter }) => {
             placeHolder="Character name ..."
             label="Character search :"
             onChange={e => setValue(e.target.value)}
+            onEnter={e => {
+              setValue(e.target.value);
+              console.log(`onEnter ${e.target.value}/${value}`);
+              onSearch();
+            }}
             value={value}
           />
           <Button onClick={onSearch} className={styles.button}>

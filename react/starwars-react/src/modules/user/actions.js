@@ -3,6 +3,7 @@ import { swAPI } from '../swapi';
 export const SET_CHARACTER = 'SET_CHARACTER';
 export const SET_CHARACTER_LOADING = 'SET_CHARACTER_LOADING';
 export const SET_FAVORITE_SHIPS = 'SET_FAVORITE_SHIPS';
+export const UNSET_FAVORITE_SHIPS = 'UNSET_FAVORITE_SHIPS';
 
 export const setCharacter = character => ({
   type: SET_CHARACTER,
@@ -16,6 +17,11 @@ export const setCharacterLoading = loading => ({
 
 export const addFavoriteShip = ship => ({
   type: SET_FAVORITE_SHIPS,
+  ship,
+});
+
+export const removeFavoriteShip = ship => ({
+  type: UNSET_FAVORITE_SHIPS,
   ship,
 });
 

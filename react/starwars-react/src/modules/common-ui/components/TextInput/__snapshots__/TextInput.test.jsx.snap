@@ -8,6 +8,7 @@ exports[`renders correctly a TextInput component 1`] = `
     
   </label>
   <input
+    onKeyDown={[Function]}
     placeholder=""
     type="text"
     value=""

@@ -1,0 +1,15 @@
+.ships {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.ships h2 {
+  font-size: 3rem;
+  margin: 1rem 0;
+}
