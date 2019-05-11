@@ -34,7 +34,7 @@ export const ShipsComponent = ({ onFav, onUnFav, favoriteShips }) => {
       <div className={Styles.list}>
         <h2>Ships</h2>
         {ships
-          .filter(s => !favoriteShips.includes(s))
+          .filter(s => !favoriteShips.some(f => s.url === f.url))
           .map(ship => (
             <div key={ship.url} className={Styles.listItem}>
               <span>{ship.name}</span>
