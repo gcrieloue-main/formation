@@ -29,6 +29,7 @@ export const ShipsComponent = ({ onFav, onUnFav, favoriteShips }) => {
           favoriteShips.map(ship => (
             <div key={ship.url} className={Styles.listItem}>
               <span>{ship.name}</span>
+              <span>{ship.model}</span>
               <Button onClick={() => onUnFav(ship)}>-★</Button>
             </div>
           ))}
@@ -40,6 +41,7 @@ export const ShipsComponent = ({ onFav, onUnFav, favoriteShips }) => {
           .map(ship => (
             <div key={ship.url} className={Styles.listItem}>
               <span>{ship.name}</span>
+              <span>{ship.model}</span>
               <Button onClick={() => onFav(ship)}>+★</Button>
             </div>
           ))}
@@ -55,6 +57,7 @@ ShipsComponent.propTypes = {
     PropTypes.shape({
       name: PropTypes.string.isRequired,
       url: PropTypes.string.isRequired,
+      model: PropTypes.string.isRequired,
     })
   ),
 };
