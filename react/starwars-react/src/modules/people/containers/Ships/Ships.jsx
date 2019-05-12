@@ -21,8 +21,9 @@ export const ShipsComponent = ({ onFav, onUnFav, favoriteShips }) => {
 
   return (
     <div className={Styles.ships}>
-      <div className={Styles.list}>
+      <div className={`${Styles.fav}`}>
         <h2>Favorite ships</h2>
+        {!favoriteShips && <p>No favorite ships.</p>}
         {favoriteShips &&
           favoriteShips.map(ship => (
             <div key={ship.url} className={Styles.listItem}>
@@ -31,8 +32,8 @@ export const ShipsComponent = ({ onFav, onUnFav, favoriteShips }) => {
             </div>
           ))}
       </div>
-      <div className={Styles.list}>
-        <h2>Ships</h2>
+      <div className={`${Styles.list} ${Styles.other}`}>
+        <h2>Other ships</h2>
         {ships
           .filter(s => !favoriteShips.some(f => s.url === f.url))
           .map(ship => (
