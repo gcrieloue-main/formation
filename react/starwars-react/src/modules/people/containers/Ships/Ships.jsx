@@ -19,11 +19,12 @@ export const ShipsComponent = ({ onFav, onUnFav, favoriteShips }) => {
     getShips();
   }, []);
 
+  console.log(favoriteShips);
   return (
     <div className={Styles.ships}>
       <div className={`${Styles.fav}`}>
         <h2>Favorite ships</h2>
-        {!favoriteShips && <p>No favorite ships.</p>}
+        {favoriteShips.length === 0 && <p>No favorite ships.</p>}
         {favoriteShips &&
           favoriteShips.map(ship => (
             <div key={ship.url} className={Styles.listItem}>
