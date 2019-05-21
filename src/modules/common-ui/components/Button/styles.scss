@@ -1,0 +1,31 @@
+.button {
+  color: gray;
+  border-radius: 3px;
+  border: 1px solid gray;
+  background-color: #ffe300;
+  color: black;
+  outline: 0;
+  height: 2.7rem;
+  padding: 0 1rem;
+  font-weight: bold;
+  font-family: sans-serif;
+
+  &:hover {
+    box-shadow: 3px 2px 10px #bbb;
+    cursor: pointer;
+  }
+
+  &:active {
+    background-color: rgb(27, 27, 27);
+    color: #ffe300;
+  }
+
+  &.secondary {
+    background-color: rgb(27, 27, 27);
+    color: #ffe300;
+  }
+  &.secondary:active {
+    background-color: #ffe300;
+    color: rgb(27, 27, 27);
+  }
+}

@@ -1,0 +1,15 @@
+.menu {
+  display: flex;
+}
+
+.link {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 5px;
+}
+
+.linkActive {
+  background: rgba(#ffe300, 0.5);
+}

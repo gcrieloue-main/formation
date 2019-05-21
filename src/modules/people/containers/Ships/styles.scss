@@ -1,0 +1,57 @@
+.ships {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+  border-left: 4px solid #666;
+  padding-left: 1rem;
+}
+
+.listItem span {
+  display: block;
+  width: 30%;
+}
+
+.fav {
+  margin-bottom: 2rem;
+}
+
+.fav .listItem {
+  animation: slide-up 0.4s ease;
+}
+
+.other .listItem {
+  animation: slide-down 0.4s ease;
+}
+
+.ships h2 {
+  font-size: 2.5rem;
+  margin: 1rem 0;
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-1.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
