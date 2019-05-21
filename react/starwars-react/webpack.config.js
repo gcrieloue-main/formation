@@ -3,7 +3,6 @@ const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const { BaseHrefWebpackPlugin } = require('base-href-webpack-plugin');
 
 module.exports = e => {
   let env = e;
@@ -92,7 +91,6 @@ module.exports = e => {
       new HtmlWebpackPlugin({
         template: 'src/index.html',
       }),
-      env.production ? new BaseHrefWebpackPlugin({ baseHref: '/react/starwars-react/dist' }) : undefined,
     ],
     devServer: {
       contentBase: '/dist',
