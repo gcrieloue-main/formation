@@ -11,7 +11,7 @@ module.exports = e => {
     mode: env.production ? 'production' : 'development',
     entry: './src/index.jsx',
     output: {
-      path: path.join(__dirname, './'),
+      path: path.join(__dirname, './dist'),
       filename: 'bundle.[chunkhash:8].js',
       publicPath: '/',
     },
@@ -93,7 +93,7 @@ module.exports = e => {
       }),
     ],
     devServer: {
-      contentBase: '/',
+      contentBase: '/dist',
       port: 8080,
       historyApiFallback: true,
       disableHostCheck: true,
