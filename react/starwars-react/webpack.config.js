@@ -13,7 +13,7 @@ module.exports = e => {
     output: {
       path: path.join(__dirname, './dist'),
       filename: 'bundle.[chunkhash:8].js',
-      publicPath: '/',
+      publicPath: './',
     },
     resolve: {
       modules: ['node_modules'],
