@@ -6,6 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server",
     "build": "NODE_ENV=production webpack -p --env.production",
+    "build:win": "set NODE_ENV=production && webpack -p --env.production",
     "jest": "jest src/",
     "jest:watch": "jest src/ --watch",
     "coverage": "jest src/ --coverage",
@@ -26,6 +27,7 @@
   },
   "homepage": "https://github.com/birdy-/starwars-react#readme",
   "dependencies": {
+    "base-href-webpack-plugin": "^2.0.0",
     "classnames": "^2.2.6",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
